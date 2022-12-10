@@ -50,7 +50,7 @@ function addFlashcard() {
     question.value = ''
     answer.value = ''
 }
-
+console.log('test')
 contentArray.forEach(element=>divMAker(element));
 
 function divMAker(text) {
