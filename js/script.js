@@ -9,7 +9,11 @@ let closeCardBtn = document.querySelector('#closeBtn')
 let saveBtn = document.querySelector('#saveBtn')
 let delCards = document.querySelector('#delCards')
 
-delCards.addEventListener('click', function(){
+window.addEventListener('load', function () {
+    contentArray.forEach(element => divMAker(element));
+})
+
+delCards.addEventListener('click', function () {
     delFlashcards()
 })
 
@@ -35,7 +39,7 @@ function showCreateCardBox() {
     createBox.style.display = 'block'
 }
 
-saveBtn.addEventListener('click', function(){
+saveBtn.addEventListener('click', function () {
     addFlashcard()
 })
 
@@ -50,8 +54,6 @@ function addFlashcard() {
     question.value = ''
     answer.value = ''
 }
-console.log('test')
-contentArray.forEach(element=>divMAker(element));
 
 function divMAker(text) {
     let div = document.createElement('div')
@@ -64,11 +66,11 @@ function divMAker(text) {
     h2_answer.innerHTML = text.my_answer
     div.appendChild(h2_question)
     div.appendChild(h2_answer)
-    div.addEventListener('click', function(){
-        if(h2_answer.style.display == 'none'){
+    div.addEventListener('click', function () {
+        if (h2_answer.style.display == 'none') {
             h2_answer.style.display = 'block'
         }
-        else{
+        else {
             h2_answer.style.display = 'none'
         }
     })
